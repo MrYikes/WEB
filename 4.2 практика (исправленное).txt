@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Поиск элементов в массиве</title>
+</head>
+<body>
+  <h1>Поиск элементов в массиве</h1>
+  <p id="array"></p>
+  <p id="output"></p>
+  
+
+  <script>
+    // Создаем массив и заполняем его случайными числами
+    let A = [];
+    for (let i = 0; i < 10; i++) {
+      A.push(Math.floor(Math.random() * (20 - 10 + 1)) + 10);
+    }
+
+    // Ищем элементы, содержащие цифру 2, и сохраняем их индексы
+    let indices = [];
+    for (let i = 0; i < A.length; i++) {
+      if (A[i].toString().indexOf('2') !== -1) {
+        indices.push(i);
+      }
+    }
+
+    // Выводим результаты
+    let output = document.getElementById('output');
+    if (indices.length > 0) {
+      array.innerHTML = A;
+      output.innerHTML = 'Элементы, содержащие цифру 2: ' + indices.join(', ');
+    } else {
+      output.innerHTML = 'В массиве нет элементов, содержащих цифру 2';
+    }
+  </script>
+</body>
+</html>
