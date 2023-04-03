@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Координаты точки</title>
+    <style>
+      /* Стили для разных комментариев */
+      .first {
+        color: red;
+        font-size: 20px;
+      }
+      .second {
+        color: blue;
+        font-size: 16px;
+      }
+      .third {
+        color: green;
+        font-size: 12px;
+      }
+	  .four {
+		color: black;
+		font-size: 30px;
+	  }
+    </style>
+  </head>
+  <body>
+    <h2>Введите координаты точки:</h2>
+    <form>
+      X: <input type="number" id="x"><br>
+      Y: <input type="number" id="y"><br>
+      <button type="button" onclick="showQuarter()">Показать четверть</button>
+    </form>
+    <div id="comment"></div>
+    <script>
+      function showQuarter() {
+        const x = Number(document.getElementById('x').value);
+        const y = Number(document.getElementById('y').value);
+        let quarter;
+        if (x > 0 && y > 0) {
+          quarter = 'I';
+          document.getElementById('comment').innerHTML = '<h3 class="first">Точка находится в первой четверти</h3>';
+        } else if (x < 0 && y > 0) {
+          quarter = 'II';
+          document.getElementById('comment').innerHTML = '<h3 class="second">Точка находится во второй четверти</h3>';
+        } else if (x < 0 && y < 0) {
+          quarter = 'III';
+          document.getElementById('comment').innerHTML = '<h3 class="third">Точка находится в третьей четверти</h3>';
+        } else if (x > 0 && y < 0) {
+          quarter = 'IV';
+          document.getElementById('comment').innerHTML = '<h3 class="four">Точка находится в четвёртой четверти</h3>';
+        } else {
+          quarter = 'невозможно определить';
+          document.getElementById('comment').innerHTML = '<h3>Ошибка! Некорректные координаты точки</h3>';
+        }
+        console.log(`Точка находится в ${quarter} четверти`);
+      }
+    </script>
+  </body>
+</html>

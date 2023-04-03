@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Изменение цвета рамки и надписи на кнопке</title>
+    <style>
+      #myBox {
+        border: 2px solid green;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myBox">
+      <p>Текст внутри рамки</p>
+    </div>
+    <button onclick="changeColor()">Красный</button>
+
+    <script>
+      function changeColor() {
+        var box = document.getElementById("myBox");
+        var button = document.getElementsByTagName("button")[0];
+        if (box.style.borderColor === "green") {
+          box.style.borderColor = "red";
+          button.innerHTML = "Зеленый";
+        } else {
+          box.style.borderColor = "green";
+          button.innerHTML = "Красный";
+        }
+      }
+    </script>
+  </body>
+</html>

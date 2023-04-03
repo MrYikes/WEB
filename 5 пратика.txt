@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Поиск последнего положительного элемента</title>
+  </head>
+  <body>
+    <button onclick="findLastPositive()">Найти элемент</button>
+    <p id="result"></p>
+
+    <script>
+      function findLastPositive() {
+        // Создаем целочисленный массив
+        const arr = [-1, 2, 3, -4, 5, -6, 7, 8, -9, 10];
+
+        // Ищем индекс последнего положительного элемента в массиве
+        let index = -1;
+        for (let i = arr.length - 1; i >= 0; i--) {
+          if (arr[i] > 0) {
+            index = i;
+            break;
+          }
+        }
+
+        // Выводим результат на страницу
+        if (index !== -1) {
+          document.getElementById("result").innerHTML = `Последний положительный элемент: ${arr[index]}`;
+        } else {
+          document.getElementById("result").innerHTML = "В массиве нет положительных элементов";
+        }
+      }
+    </script>
+  </body>
+</html>

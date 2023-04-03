@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Квадранты</title>
+	<script>
+		function openWindow() {
+			// Получаем координаты точки
+			var x = parseFloat(prompt("Введите координату X:"));
+			var y = parseFloat(prompt("Введите координату Y:"));
+
+			// Определяем в какой четверти лежит точка
+			var quadrant = 0;
+			if (x > 0) {
+				if (y > 0) {
+					quadrant = 1;
+				} else {
+					quadrant = 4;
+				}
+			} else {
+				if (y > 0) {
+					quadrant = 2;
+				} else {
+					quadrant = 3;
+				}
+			}
+
+			// Создаем новое окно
+			var newWindow = window.open("", "newWindow", "width=200,height=200");
+
+			// Устанавливаем цвет и размер шрифта в зависимости от четверти
+			switch (quadrant) {
+				case 1:
+					newWindow.document.write("<h3 style='color:red;font-size:20px'>Точка находится в первой четверти</h3>");
+					break;
+				case 2:
+					newWindow.document.write("<h3 style='color:blue;font-size:24px'>Точка находится во второй четверти</h3>");
+					break;
+				case 3:
+					newWindow.document.write("<h3 style='color:green;font-size:16px'>Точка находится в третьей четверти</h3>");
+					break;
+				case 4:
+					newWindow.document.write("<h3 style='color:purple;font-size:18px'>Точка находится в четвертой четверти</h3>");
+					break;
+				default:
+					newWindow.document.write("<h3>Ошибка ввода координат</h3>");
+			}
+		}
+
+		function closeWindow() {
+			// Закрываем новое окно
+			window.close();
+		}
+	</script>
+</head>
+<body>
+	<button onclick="openWindow()">Start</button>
+	<button onclick="closeWindow()">Close</button>
+</body>
+</html>
